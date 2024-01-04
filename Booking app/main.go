@@ -82,6 +82,12 @@ func BookTicket(userTickets uint, firstName string, lastName string, email strin
 	remainingTickets = remainingTickets - userTickets
 	bookings = append(bookings, firstName+" "+lastName)
 
+	//create a map for a user
+	var userData = make(map[string]string)
+	userData["firstname"] = firstName
+	userData["lastName"] = lastName
+	userData["email"] = email
+
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v ticket.\n", remainingTickets, conferenceName)
 }

@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	var input int
-	fmt.Scanln(&input)
+	var grade int
+	fmt.Scanln(&grade)
 
-	if input >= 5 {
-		fmt.Println("Excellent")
+	if grade >= 5 {
+		fmt.Println("Excellent!")
 	}
 }

@@ -10,10 +10,12 @@ func main() {
 
 	sumTime := time1 + time2 + time3
 
-	var minutes int = sum / 60 
-	seconds := sum % 60
+	var minutes int = sumTime / 60
+	seconds := sumTime % 60
 
 	if seconds < 10 {
-		fmt.Printf()
+		fmt.Printf("%d:%.2d", minutes, seconds)
+	} else {
+		fmt.Printf("%d:%d", minutes, seconds)
 	}
 }

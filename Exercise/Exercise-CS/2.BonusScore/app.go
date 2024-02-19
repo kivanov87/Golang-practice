@@ -7,16 +7,22 @@ func main() {
 
 	fmt.Scanln(&number)
 
-	var bScores float64
+	var bonusPoints float64
 
 	if number > 1000 {
-		bScores := float64(number) * 0.1
+		bonusPoints = float64(number) * 0.1
 	} else if number <= 100 {
-		bScores := float64(number) + 5
+		bonusPoints = 5
 	} else if number > 100 {
-		bScores := float64(number) * 0.2
+		bonusPoints = float64(number) * 0.2
 	}
 
-	fmt.Println(bScores)
+	if number%2 == 0 {
+		bonusPoints = bonusPoints + float64(1)
+	} else if number%10 == 5 {
+		bonusPoints = bonusPoints + float64(2)
+	}
 
+	fmt.Println(bonusPoints)
+	fmt.Println(float64(number) + bonusPoints)
 }

@@ -1,56 +1,52 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var typeOfFlowers string
-	var countOfFlowers int
-	var budget int
-	var price, diff float64
-	const Roses float64 = 5
-	const dahlia = 3.80
-	const tulip = 2.80
-	const narcis float64 = 3
-	const gladiola = 2.50
+	var flowerType string
+	var flowerCount, budget float64
 
-	fmt.Scan(&typeOfFlowers, &countOfFlowers, &budget)
-	switch typeOfFlowers {
-	case "Roses": ////////////////////////////
-		if countOfFlowers > 80 {
-			price = (float64(countOfFlowers) * Roses) * 0.9
-		} else {
-			price = float64(countOfFlowers) * Roses
+	fmt.Scan(&flowerType)
+	fmt.Scan(&flowerCount)
+	fmt.Scan(&budget)
+
+	var pricePerFlower float64
+
+	switch flowerType {
+	case "Roses":
+		pricePerFlower = 5
+		if flowerCount > 80 {
+			pricePerFlower *= 0.9
 		}
-	case "Dahlias": ////////////////////
-		if countOfFlowers > 90 {
-			price = (float64(countOfFlowers) * dahlia) * 0.85
-		} else {
-			price = float64(countOfFlowers) * dahlia
+	case "Dahlias":
+		pricePerFlower = 3.80
+		if flowerCount > 90 {
+			pricePerFlower *= 0.85
 		}
 	case "Tulips":
-		if countOfFlowers > 80 {
-			price = (float64(countOfFlowers) * tulip) * 0.85
-		} else {
-			price = float64(countOfFlowers) * tulip
+		pricePerFlower = 2.80
+		if flowerCount > 80 {
+			pricePerFlower *= 0.85
 		}
 	case "Narcissus":
-		if countOfFlowers < 120 {
-			price = (float64(countOfFlowers) * narcis) * 1.15
-		} else {
-			price = float64(countOfFlowers) * narcis
+		pricePerFlower = 3
+		if flowerCount < 120 {
+			pricePerFlower *= 1.15
 		}
 	case "Gladiolus":
-		if countOfFlowers < 80 {
-			price = (float64(countOfFlowers) * gladiola) * 1.20
-		} else {
-			price = float64(countOfFlowers) * gladiola
+		pricePerFlower = 2.50
+		if flowerCount < 80 {
+			pricePerFlower *= 1.20
 		}
 	}
-	if float64(budget) > price {
-		diff = float64(budget) - price
-		fmt.Printf("Hey, you have a great garden with %v %v and %.2f leva left.", countOfFlowers, typeOfFlowers, diff)
+
+	totalPrice := flowerCount * pricePerFlower
+
+	if budget >= totalPrice {
+		fmt.Printf("Hey, you have a great garden with %.0f %s and %.2f leva left.\n", flowerCount, flowerType, budget-totalPrice)
 	} else {
-		diff = price - float64(budget)
-		fmt.Printf("Not enough money, you need %.2f leva more.", diff)
+		fmt.Printf("Not enough money, you need %.2f leva more.\n", totalPrice-budget)
 	}
 }

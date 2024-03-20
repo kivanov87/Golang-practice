@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	var age, priceForToy, toyCounter, lilyMoney int
-	var priceForWashingMachine float64
+	var age, toyPrice, toyCounter, lilyMoney int
+	var washingMachinePrice float64
 	var birthdayMoney = 10
 
 	fmt.Scanln(&age)
-	fmt.Scanln(&priceForWashingMachine)
-	fmt.Scanln(&priceForToy)
+	fmt.Scanln(&washingMachinePrice)
+	fmt.Scanln(&toyPrice)
 
 	for i := 1; i <= age; i++ {
 
@@ -23,16 +23,16 @@ func main() {
 		}
 	}
 
-	lilyMoney += toyCounter * priceForToy
+	lilyMoney += toyCounter * toyPrice
 
-	if float64(lilyMoney) >= priceForWashingMachine {
-		diff := float64(lilyMoney) - priceForWashingMachine
+	if float64(lilyMoney) >= washingMachinePrice {
+		diff := float64(lilyMoney) - washingMachinePrice
 
 		fmt.Printf("Yes! %.2f", diff)
 	} else {
-		moneyNeeded := priceForWashingMachine - float64(lilyMoney)
+		neededMoney := washingMachinePrice - float64(lilyMoney)
 
-		fmt.Printf("No! %.2f", moneyNeeded)
+		fmt.Printf("No! %.2f", neededMoney)
 	}
 
 }

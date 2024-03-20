@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	for num := 1; num <= 100; num++ {
-		fmt.Println(num)
+	for number := 1; number <= 100; number++ {
+		fmt.Println(number)
 	}
 }

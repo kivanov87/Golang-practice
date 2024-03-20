@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	var countOfTabs, salary int
+	var tabsCount, salary int
 	var tabName string
 
-	fmt.Scanln(&countOfTabs)
+	fmt.Scanln(&tabsCount)
 	fmt.Scanln(&salary)
 
-	for i := 0; i < countOfTabs; i++ {
+	for i := 0; i < tabsCount; i++ {
 		fmt.Scanln(&tabName)
 
 		switch tabName {

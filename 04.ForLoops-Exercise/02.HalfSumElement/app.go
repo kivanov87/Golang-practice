@@ -6,28 +6,28 @@ import (
 )
 
 func main() {
-	var num, currentNum, sum int
-	var maxNum int32 = math.MinInt32
+	var num, currentN, sum int
+	var maxN int32 = math.MinInt32
 
 	fmt.Scanln(&num)
 
 	for i := 0; i < num; i++ {
-		fmt.Scanln(&currentNum)
+		fmt.Scanln(&currentN)
 
-		if int32(currentNum) > maxNum {
-			maxNum = int32(currentNum)
+		if int32(currentN) > maxN {
+			maxN = int32(currentN)
 		}
 
-		sum += currentNum
+		sum += currentN
 	}
 
-	sum -= int(maxNum)
+	sum -= int(maxN)
 
-	if sum == int(maxNum) {
+	if sum == int(maxN) {
 		fmt.Println("Yes")
 		fmt.Printf("Sum = %d", sum)
 	} else {
-		diff := math.Abs(float64(sum) - float64(maxNum))
+		diff := math.Abs(float64(sum) - float64(maxN))
 
 		fmt.Println("No")
 		fmt.Printf("Diff = %.0f", diff)

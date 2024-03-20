@@ -1,35 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var countOfTournaments, startingPoints, tournametPoint, winTournaments int
-	var result string
+	var tournaments, startPoints int
+	fmt.Scan(&tournaments)
+	fmt.Scan(&startPoints)
 
-	fmt.Scanln(&countOfTournaments)
-	fmt.Scanln(&startingPoints)
+	points := startPoints
+	wins := 0
 
-	for i := 0; i < countOfTournaments; i++ {
-		fmt.Scanln(&result)
+	for i := 0; i < tournaments; i++ {
+		var stage string
+		fmt.Scan(&stage)
 
-		switch result {
+		switch stage {
 		case "W":
-			tournametPoint += 2000
-			winTournaments++
+			points += 2000
+			wins++
 		case "F":
-			tournametPoint += 1200
+			points += 1200
 		case "SF":
-			tournametPoint += 720
+			points += 720
 		}
 	}
 
-	averagePoints := tournametPoint / countOfTournaments
-
-	var percentWinTournamets float64 = float64(winTournaments) / float64(countOfTournaments) * 100
-	var finalPoints = startingPoints + tournametPoint
-
-	fmt.Printf("Final points: %d\n", finalPoints)
-	fmt.Printf("Average points: %d\n", averagePoints)
-	fmt.Printf("%.2f%%", percentWinTournamets)
-
+	fmt.Printf("Final points: %d\n", points)
+	fmt.Printf("Average points: %d\n", (points-startPoints)/tournaments)
+	fmt.Printf("%.2f%%\n", float64(wins)/float64(tournaments)*100)
 }

@@ -3,34 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	var num, currentNum, p1, p2, p3, p4, p5 int
+	var num, currentN, s1, s2, s3, s4, s5 int
 	fmt.Scanln(&num)
 
 	for i := 0; i < num; i++ {
-		fmt.Scanln(&currentNum)
+		fmt.Scanln(&currentN)
 
-		if currentNum < 200 {
-			p1++;
-		} else if currentNum <= 399 {
-			p2++;
-		} else if currentNum <= 599 {
-			p3++;
-		} else if currentNum <= 799 {
-			p4++;
-		} else if currentNum >= 800 {
-			p5++;
+		if currentN < 200 {
+			s1++
+		} else if currentN <= 399 {
+			s2++
+		} else if currentN <= 599 {
+			s3++
+		} else if currentN <= 799 {
+			s4++
+		} else if currentN >= 800 {
+			s5++
 		}
 	}
 
-	percentP1 := float32(p1) / float32(num) * 100
-	percentP2 := float32(p2) / float32(num) * 100
-	percentP3 := float32(p3) / float32(num) * 100
-	percentP4 := float32(p4) / float32(num) * 100
-	percentP5 := float32(p5) / float32(num) * 100
+	percentS1 := float32(s1) / float32(num) * 100
+	percentS2 := float32(s2) / float32(num) * 100
+	percentS3 := float32(s3) / float32(num) * 100
+	percentS4 := float32(s4) / float32(num) * 100
+	percentS5 := float32(s5) / float32(num) * 100
 
-	fmt.Printf("%.2f%%\n", percentP1)
-	fmt.Printf("%.2f%%\n", percentP2)
-	fmt.Printf("%.2f%%\n", percentP3)
-	fmt.Printf("%.2f%%\n", percentP4)
-	fmt.Printf("%.2f%%", percentP5)
+	fmt.Printf("%.2f%%\n", percentS1)
+	fmt.Printf("%.2f%%\n", percentS2)
+	fmt.Printf("%.2f%%\n", percentS3)
+	fmt.Printf("%.2f%%\n", percentS4)
+	fmt.Printf("%.2f%%", percentS5)
 }

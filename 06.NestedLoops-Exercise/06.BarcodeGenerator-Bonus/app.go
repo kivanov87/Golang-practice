@@ -7,7 +7,7 @@ func main() {
 	fmt.Scanln(&startNumber)
 	fmt.Scanln(&endNumber)
 
-	firstDigitStartNum := startNumber / 1000
+	firstDigitStartNum := startNumber / 1000     
 	secondDigitStartNum := startNumber / 100 % 10
 	thirdDigitStartNum := startNumber / 10 % 10
 	forthDigitStartNum := startNumber % 10
